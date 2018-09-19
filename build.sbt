@@ -10,7 +10,7 @@ val baseSettings = Seq(
   name := "sourcecode",
   version := "0.1.5-SNAPSHOT",
   scalaVersion := scala211,
-  crossScalaVersions := Seq(scala210, scala211, scala212, scala213),
+  crossScalaVersions := Seq(scala211), // Seq(scala210, scala211, scala212, scala213),
   scmInfo := Some(ScmInfo(
     browseUrl = url("https://github.com/lihaoyi/sourcecode"),
     connection = "scm:git:git@github.com:lihaoyi/sourcecode.git"
@@ -30,6 +30,8 @@ lazy val noPublish = Seq(
   publish := {},
   publishLocal := {}
 )
+
+scalacOptions += "-target:jvm-1.8"
 
 baseSettings
 noPublish
